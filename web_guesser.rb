@@ -1,8 +1,9 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
-secret_num = rand(100)
+number = rand(100)
 
 get '/' do
-  "The SECRET NUMBER is #{secret_num}"
+  # render the ERB template named index and create a local variable for the template named number which has the same value as the number variable from this server code."
+  erb :index, :locals => {:number => number}
 end
